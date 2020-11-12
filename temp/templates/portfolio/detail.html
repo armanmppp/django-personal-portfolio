@@ -1,0 +1,14 @@
+{% extends 'shared/main.html' %}
+{% load static %}
+{% block title %}
+    PortFolio - Detail
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="blogdetail">
+            <h2 class="text-center">{{ portfolioInfo.title }}</h2>
+            <p>{{ portfolioInfo.description|safe }}</p>
+        </div>
+    </div>
+{% endblock %}

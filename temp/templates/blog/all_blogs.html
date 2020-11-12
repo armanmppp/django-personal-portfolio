@@ -1,0 +1,26 @@
+{% extends 'shared/main.html' %}
+{% load static %}
+{% block title %}
+    Blogs
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h2 class="alert alert-info text-center" style="width:22%;margin:10px;">
+            Number Of Blog{{ allblog.count|pluralize }}: {{ allblog.count }}
+        </h2>
+        <div class="row">
+            {% for blog in allblog %}
+                <div class="col-md-12 col-xs-12">
+                    <a href="{% url 'blog:detail' blog.id %}" class="detailbloglink">
+                        <div class="blogcart">
+                            <h2>{{ blog.title }}</h2>
+                            <p>{{ blog.description|truncatechars:450|striptags }}</p>
+                            <p>{{ blog.date|date:'M d Y'|upper }}</p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

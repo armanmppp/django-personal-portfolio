@@ -1,0 +1,18 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'portfolio:index' %}" style="outline:none;">Home</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a href="#" class="nav-link" style="outline:none;">Resumeh</a>
+      </li>
+      <li>
+        <a href="{% url 'blog:index' %}" class="nav-link btn btn-warning">Blog</a>
+      </li>
+    </ul>
+  </div>
+</nav>

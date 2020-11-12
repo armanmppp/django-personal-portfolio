@@ -1,0 +1,15 @@
+{% extends 'shared/main.html' %}
+{% load static %}
+{% block title %}
+    Blogs - Detail
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="blogdetail">
+            <h2 class="text-center">{{ blog.title }}</h2>
+            <p>{{ blog.description|safe }}</p>
+            <p style="color:#48b500;">{{ blog.date|date:'M d Y'|upper }}</p>
+        </div>
+    </div>
+{% endblock %}

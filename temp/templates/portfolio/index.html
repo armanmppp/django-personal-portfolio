@@ -1,0 +1,44 @@
+{% extends 'shared/main.html' %}
+{% load static %}
+{% block title %}
+    PortFolio
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="text-center">
+            <h1 class="portfolio-h1-title">
+                ** Arman.Coder **
+            </h1>
+            <img class="portfolio-image" src="{% static 'images/27698.jpg' %}" alt="" width="500">
+        </div>
+        <br>
+        <div align="center">
+            <div class="portfolio-titr">
+            <h2>
+                PortFolio
+            </h2>
+        </div>
+        </div>
+        <br>
+        <div align="center">
+            <div class="allportfolio-carts">
+                <div class="row">
+                    {% for project in projects %}
+                        <div class="col-md-3 col-xs-12">
+                            <a href="{% url 'portfolio:detail' project.id %}" class="linkBgCart">
+                                <div class="bgcart">
+                                    <img src="media/{{ project.image }}">
+                                    <h4>{{ project.title }}</h4>
+                                    <hr style="width:50%;">
+                                    <p>{{ project.description|striptags|truncatechars:100 }}</p>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+                <a href="{% url 'portfolio:allportfolio' %}" class="btn btn-success allMyPortfolio">See All My Portfolio</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
